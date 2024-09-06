@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Barlow_Condensed } from "next/font/google";
 import "./globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
+import { NavBar } from "@/components/navbar";
 
-const inter = Inter({ subsets: ["latin"] });
+const barlow = Barlow_Condensed({
+  subsets: ["latin"],
+  weight: ["400", "700", "500", "900"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -11,12 +16,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body className={barlow.className} suppressHydrationWarning>
+          <header className="p-2">
+            <NavBar />
+          </header>
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
