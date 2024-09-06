@@ -11,7 +11,7 @@ import {
 } from "@assistant-ui/react";
 import type { FC } from "react";
 
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
   ArrowDownIcon,
@@ -28,6 +28,7 @@ import {
 import { MarkdownText } from "@/components/ui/assistant-ui/markdown-text";
 import { TooltipIconButton } from "@/components/ui/assistant-ui/tooltip-icon-button";
 import { cn } from "@/lib/utils";
+import { useAuth, useUser } from "@clerk/nextjs";
 
 export const MyThread: FC = () => {
   return (
@@ -72,10 +73,12 @@ const MyThreadScrollToBottom: FC = () => {
 };
 
 const MyThreadWelcome: FC = () => {
+  const { user } = useUser();
   return (
     <ThreadPrimitive.Empty>
       <div className="flex flex-grow basis-full flex-col items-center justify-center">
         <Avatar>
+          <AvatarImage src={user?.imageUrl} />
           <AvatarFallback>C</AvatarFallback>
         </Avatar>
         <p className="mt-4 font-medium">How can I help you today?</p>
