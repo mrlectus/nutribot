@@ -4,7 +4,7 @@ const ChatApp = () => {
   return (
     <>
       <ChatRutimeProvider>
-        <main className="w-screen min-h-screen">
+        <main className="w-screen md:h-screen h-dvh">
           <div className="h-full">
             <MyThread />
           </div>

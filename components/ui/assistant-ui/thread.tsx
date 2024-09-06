@@ -28,7 +28,7 @@ import {
 import { MarkdownText } from "@/components/ui/assistant-ui/markdown-text";
 import { TooltipIconButton } from "@/components/ui/assistant-ui/tooltip-icon-button";
 import { cn } from "@/lib/utils";
-import { useAuth, useUser } from "@clerk/nextjs";
+import { useUser } from "@clerk/nextjs";
 
 export const MyThread: FC = () => {
   return (
