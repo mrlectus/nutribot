@@ -2,7 +2,6 @@
 
 import { vertex } from "@ai-sdk/google-vertex";
 import { generateObject, streamText } from "ai";
-import { createStreamableValue } from "ai/rsc";
 import z from "zod";
 
 export async function getAnswer(question: string) {

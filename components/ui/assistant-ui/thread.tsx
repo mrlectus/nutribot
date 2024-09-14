@@ -7,7 +7,9 @@ import {
   BranchPickerPrimitiveRootProps,
   ComposerPrimitive,
   MessagePrimitive,
+  SuggestionConfig,
   ThreadPrimitive,
+  ThreadWelcomeSuggestionProps,
 } from "@assistant-ui/react";
 import type { FC } from "react";
 
@@ -72,6 +74,49 @@ const MyThreadScrollToBottom: FC = () => {
   );
 };
 
+const ThreadWelcomeSuggestion: FC<ThreadWelcomeSuggestionProps> = ({
+  suggestion: { text, prompt },
+}) => {
+  return (
+    <ThreadPrimitive.Suggestion
+      className="flex max-w-sm grow basis-0 flex-col items-center justify-center rounded-lg border p-3"
+      prompt={prompt}
+      method="replace"
+      autoSend
+    >
+      <span className="line-clamp-2 text-ellipsis text-sm font-semibold">
+        {text ?? prompt}
+      </span>
+    </ThreadPrimitive.Suggestion>
+  );
+};
+
+const ThreadWelcomeSuggestions: FC = () => {
+  const suggestions: SuggestionConfig[] = [
+    {
+      text: (
+        <div className="">
+          Generate a Carbs free diet for two weeks for breakfast and dinner{" "}
+        </div>
+      ),
+      prompt:
+        "Generate a Carbs free diet for two weeks for breakfast and dinner ",
+    },
+  ]; // TODO add your suggestions here
+  return (
+    <div className="mt-4 flex w-full items-stretch justify-center gap-4">
+      {suggestions?.map((suggestion) => {
+        return (
+          <ThreadWelcomeSuggestion
+            key={suggestion.prompt}
+            suggestion={suggestion}
+          />
+        );
+      })}
+    </div>
+  );
+};
+
 const MyThreadWelcome: FC = () => {
   const { user } = useUser();
   return (
@@ -83,6 +128,7 @@ const MyThreadWelcome: FC = () => {
         </Avatar>
         <p className="mt-4 font-medium">How can I help you today?</p>
       </div>
+      <ThreadWelcomeSuggestions />
     </ThreadPrimitive.Empty>
   );
 };
