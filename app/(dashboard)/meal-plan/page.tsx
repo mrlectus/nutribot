@@ -56,7 +56,7 @@ const MealPlan = () => {
               setBreakFastLoading(true);
               setActive(1);
               const { text } = await generateBreakfast(
-                "Generate breake fast!",
+                "Generate breakfast!",
                 payload,
               );
               setBreakFast(JSON.stringify(text, null, 2));

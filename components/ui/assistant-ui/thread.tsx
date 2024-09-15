@@ -79,14 +79,12 @@ const ThreadWelcomeSuggestion: FC<ThreadWelcomeSuggestionProps> = ({
 }) => {
   return (
     <ThreadPrimitive.Suggestion
-      className="flex max-w-sm grow basis-0 flex-col items-center justify-center rounded-lg border p-3"
+      className="flex flex-col items-center w-[200px] justify-center rounded-lg border p-3"
       prompt={prompt}
       method="replace"
       autoSend
     >
-      <span className="line-clamp-2 text-ellipsis text-sm font-semibold">
-        {text ?? prompt}
-      </span>
+      <span className="text-sm font-semibold">{text ?? prompt}</span>
     </ThreadPrimitive.Suggestion>
   );
 };
@@ -102,9 +100,38 @@ const ThreadWelcomeSuggestions: FC = () => {
       prompt:
         "Generate a Carbs free diet for two weeks for breakfast and dinner ",
     },
+    {
+      text: (
+        <div className="">
+          Design a low-sugar meal plan for lunch and dinner for the upcoming
+          week.
+        </div>
+      ),
+      prompt:
+        "Design a low-sugar meal plan for lunch and dinner for the upcoming week.",
+    },
+    {
+      text: (
+        <div className="">
+          Generate a gluten-free meal plan for the next 5 days, covering all
+          three meals.
+        </div>
+      ),
+      prompt:
+        "Generate a gluten-free meal plan for the next 5 days, covering all three meals.",
+    },
+    {
+      text: (
+        <div className="">
+          Provide a keto diet plan for breakfast and lunch over the next 3 days.
+        </div>
+      ),
+      prompt:
+        "Provide a keto diet plan for breakfast and lunch over the next 3 days.",
+    },
   ]; // TODO add your suggestions here
   return (
-    <div className="mt-4 flex w-full items-stretch justify-center gap-4">
+    <div className="mt-4 flex w-fit justify-center gap-4">
       {suggestions?.map((suggestion) => {
         return (
           <ThreadWelcomeSuggestion
@@ -126,7 +153,9 @@ const MyThreadWelcome: FC = () => {
           <AvatarImage src={user?.imageUrl} />
           <AvatarFallback>C</AvatarFallback>
         </Avatar>
-        <p className="mt-4 font-medium">How can I help you today?</p>
+        <p className="mt-4 font-medium">
+          As your personal dietician, How can i help you today?
+        </p>
       </div>
       <ThreadWelcomeSuggestions />
     </ThreadPrimitive.Empty>
