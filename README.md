@@ -30,4 +30,8 @@ When you use Grounding with Google Search, it links the Google model to the inte
 - *Health-Focused:* By offering recommendations that focus on well-rounded, nutrient-dense meals, the chatbot helps you stay on track with your health goals, no matter how busy life gets.
 - Easy to Use: With a simple and intuitive interface, getting the dietary support you need is easy, even for users without technical expertise.
 
+## How to use this Web App
 
+Just go to [nutribot](https://nutribot-mfwd.onrender.com/) and start chatting with the bot. It will ask you a few questions about your
+dietary preferences, goals, and restrictions, and then generate a personalized meal plan for you. You can also ask the bot any
+nutrition-related questions you have, and it will provide you with accurate and reliable answers.
