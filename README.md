@@ -6,6 +6,10 @@ It might be difficult to maintain a balanced diet in the fast paced world of tod
 
 ## Demo
 
+
+https://github.com/user-attachments/assets/532a3252-3e5d-4e1f-8345-1687c036de77
+[nutribot](https://nutribot-mfwd.onrender.com/)
+
 > [!IMPORTANT]
 >
 > If the video shows error use a chromium based browser.
