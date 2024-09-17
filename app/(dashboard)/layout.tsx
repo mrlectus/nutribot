@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "dashboard",
   description: "",
 };
+
 const kumbh = Kumbh_Sans({
   subsets: ["latin"],
   weight: ["400", "700", "500", "900"],
@@ -21,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body
-        className={`${kumbh.className} h-dvh flex flex-col`}
+        className={`${kumbh.className} h-dvh md:h-screen`}
         suppressHydrationWarning={true}
       >
         <ProgressProviders>
