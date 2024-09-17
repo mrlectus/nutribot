@@ -7,6 +7,14 @@ import {
 import { vertex } from "@ai-sdk/google-vertex";
 import { generateObject } from "ai";
 
+/**
+ * Asynchronously generates a personalized breakfast plan based on the client's
+ * dietary preferences, allergies, nutritional goals, and other factors.
+ * The function utilizes a machine learning model (Gemini-1.5-pro) with search grounding
+ * to provide tailored recommendations, taking into account the client's country and other specified details.
+ * Returns the generated breakfast plan in an object.
+ */
+
 export async function generateBreakfast(
   question: string,
   payload: {
@@ -28,6 +36,13 @@ export async function generateBreakfast(
   });
   return { text };
 }
+
+/**
+ * Asynchronously generates a personalized lunch plan based on the client's dietary preferences, allergies,
+ * nutritional goals, and other relevant factors. The function uses the Gemini-1.5-pro model with search grounding
+ * to create a tailored lunch plan for the client, taking into account their country and other specific details.
+ * Returns the generated lunch plan in an object.
+ */
 
 export async function generateLunch(
   question: string,
@@ -51,6 +66,12 @@ export async function generateLunch(
   return { text };
 }
 
+/**
+ * Asynchronously generates a personalized dinner plan based on the client's dietary preferences, allergies,
+ * nutritional goals, and additional considerations. The function utilizes the Gemini-1.5-pro model with search grounding
+ * to provide a customized dinner plan that suits the client's preferences, goals, and country-specific factors.
+ * Returns the generated dinner plan in an object.
+ */
 export async function generateDinner(
   question: string,
   payload: {

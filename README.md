@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NutriBot - Your Personal Dietician & Nutritionist
 
-## Getting Started
+## Introduction
 
-First, run the development server:
+It might be difficult to maintain a balanced diet in the fast paced world of today. Keeping track of your nutritional intake and making wise food choices is essential whether you're attempting to manage a condition, reduce weight, or just eat better. Our chatbot, the personal dietician, can help with that. This clever assistant can create customized meal plans for breakfast, lunch, and dinner in addition to offering professional nutritional advice and responding to your inquiries about nutrition. It's like always having a dietitian with you to help you make better food choices.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Demo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> [!IMPORTANT]
+>
+> If the video shows error use a chromium based browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## RAG - Grounding with Google Search
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+In generative AI, grounding is the ability to connect model output to verifiable sources of information. If you provide models with access to specific data sources, then grounding tethers their output to these data and reduces the chances of inventing content. This is particularly important in situations where accuracy and reliability are significant.
 
-## Learn More
+Grounding provides the following benefits:
 
-To learn more about Next.js, take a look at the following resources:
+- Reduces model hallucinations, which are instances where the model generates content that isn't factual.
+- Anchors model responses to specific information.
+- Enhances the trustworthiness and applicability of the generated content.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+When you use Grounding with Google Search, it links the Google model to the internet. Since non-grounded generative AI model responses are considered new content based on learned patterns, you won't get factual responses which are time specific, for example, asking what the weather forecast is in your prompt. Since the internet provides access to existing and new information, a grounded prompt can give you nuanced and specific prompt responses, with little error, and with its sources cited.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Why You Should Use This App
 
-## Deploy on Vercel
+- *Personalized Guidance:* The chatbot tailors its advice based on your unique dietary needs, preferences, and goals, ensuring that the recommendations you receive are relevant and actionable.
+- *Convenient Meal Planning:* Forget the hassle of planning meals. With just a few taps, the chatbot can generate balanced and nutritious meal plans for all your daily meals—breakfast, lunch, and dinner.
+- *Instant Answers:* Whether you have questions about specific foods, nutrients, or dietary tips, the chatbot is available 24/7 to provide immediate, reliable answers.
+- *Health-Focused:* By offering recommendations that focus on well-rounded, nutrient-dense meals, the chatbot helps you stay on track with your health goals, no matter how busy life gets.
+- Easy to Use: With a simple and intuitive interface, getting the dietary support you need is easy, even for users without technical expertise.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
