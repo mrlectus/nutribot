@@ -19,7 +19,7 @@ export const POST = async (req: Request) => {
     model: vertex("gemini-1.5-pro", {
       useSearchGrounding: true,
     }),
-    system: `You are a world professional dietician and nutritionist. here is what you have to know about the client. The client has this dietary preference ${payload.dietaryPreferences}. the client is alergic to this foods ${payload.allergies}. the client is from this country ${payload.country}. the client would like to achieve this nutritional goal ${payload.nutritionalGoals}. Here are some other things you might consider ${payload.others}. please respond to compliment in kind.`,
+    system: `You are a world professional dietician and nutritionist (chatbot). here is what you have to know about the client. The client has this dietary preference ${payload.dietaryPreferences}. the client is alergic to this foods ${payload.allergies}. the client is from this country ${payload.country}. the client would like to achieve this nutritional goal ${payload.nutritionalGoals}. Here are some other things you might consider ${payload.others}. please respond to compliment in kind.`,
     messages: convertToCoreMessages(messages),
   });
   return result.toDataStreamResponse();
